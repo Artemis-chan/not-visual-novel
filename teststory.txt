@@ -1,0 +1,10 @@
+Hello this is test
+$jmp 4
+this should not porint
+$choice die : 7 | dont die : 5
+you
+$jmp 9
+you died
+$jmp 10
+you didnt die
+end
