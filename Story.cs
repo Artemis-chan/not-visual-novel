@@ -11,7 +11,7 @@ namespace NotVisualNovel
         private int _len;
         private int _linePointer = 0;
 
-        public Story(string storyFile = "story.txt")
+        public Story(string storyFile)
         {
             _storyLines = System.IO.File.ReadAllLines(storyFile);
             _len = _storyLines.Length;
@@ -67,7 +67,7 @@ namespace NotVisualNovel
 
         private int GetChoice(int count)
         {
-            DelayedWriter.WriteLineDelay("Enter choice.\n");
+            //DelayedWriter.WriteLineDelay("Enter choice.\n");
             int choice;
             while(true)
             {

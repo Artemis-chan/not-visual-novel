@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
+using NotVisualNovel.Config;
 
 namespace NotVisualNovel
 {
     public static class DelayedWriter
     {
-        public static int sleepTime = 70;
         public static void WriteLineDelay(string text)
         {
             foreach (var ch in text)
@@ -15,7 +15,7 @@ namespace NotVisualNovel
         }
         public static void WriteCharDelay(char character)
         {
-            Thread.Sleep(sleepTime);
+            Thread.Sleep(NVNConfig.wordDelay);
             Console.Write(character);
         }
     }

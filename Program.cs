@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using NotVisualNovel.Config;
 
 namespace NotVisualNovel
 {
@@ -7,7 +8,8 @@ namespace NotVisualNovel
     {
         static void Main(string[] args)
         {
-            var story = new Story("teststory.txt");
+            NVNConfig.Load();
+            var story = new Story(NVNConfig.storyFile);
             story.Start();
         }
 
