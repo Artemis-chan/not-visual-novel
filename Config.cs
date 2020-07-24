@@ -12,7 +12,7 @@ namespace NotVisualNovel.Config
 
         public static void Load()
         {
-            var matches = Regex.Matches(File.ReadAllText("config.ini"), @"^((?!\/\/).)+", RegexOptions.Multiline);
+            var matches = Regex.Matches(File.ReadAllText("config.ini"), @"^((?!#).)+=((?!#).)+[^\s#]", RegexOptions.Multiline);
             var fields = typeof(NVNConfig).GetFields();
             foreach (Match line in matches)
             {
@@ -22,6 +22,7 @@ namespace NotVisualNovel.Config
                     if(field.Name.Equals(config[0].Trim()))
                     {
                         field.SetValue(null, TypeDescriptor.GetConverter(field.FieldType).ConvertFromString(config[1].Trim()));
+                        break;
                     }
                 }
             }

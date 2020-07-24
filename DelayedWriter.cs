@@ -8,6 +8,7 @@ namespace NotVisualNovel
     {
         public static void WriteLineDelay(string text)
         {
+            Console.Write("> ");
             foreach (var ch in text)
             {
                 WriteCharDelay(ch);

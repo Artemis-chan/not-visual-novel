@@ -1,0 +1,7 @@
+1. every line will be printed one after one
+2. lines starting with $ will be evaluated as command lines
+2.1 use "$jmp <line no>" to skip or move to the line
+2.2 use "$choice <choice txt 1> : <choice line 1> | <choice txt 2> : <choice line 2> | ..."
+2.2.1 to give choice to player then move the execution line to the given line assigned after ":"
+2.2.2 use "|" to separate choices, a lot of choices can be added in one line
+3. dont jump to a line that doesnt exsist, useing $jmp or $choice, it'll lead to crash otherwise
